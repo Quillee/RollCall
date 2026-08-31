@@ -1,0 +1,20 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  cmd = "go build -o ./tmp/main ./cmd/server"
+  entrypoint = ["./tmp/main"]
+  include_ext = ["go"]
+  exclude_dir = ["tmp", "testdata"]
+  exclude_regex = ["_test.go"]
+  # main.go already handles SIGINT/SIGTERM for a graceful shutdown, so let
+  # air ask nicely first and only force-kill if it doesn't exit in time.
+  send_interrupt = true
+  kill_delay = "2s"
+  delay = 200
+
+[log]
+  time = true
+
+[misc]
+  clean_on_exit = true

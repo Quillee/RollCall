@@ -1,0 +1,17 @@
+{
+  "name": "rollc",
+  "private": true,
+  "packageManager": "yarn@4.17.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspace web dev",
+    "build": "yarn workspaces foreach -Apt run build",
+    "typecheck": "yarn workspaces foreach -Apt run typecheck",
+    "server:dev": "go -C server run ./cmd/server",
+    "server:build": "go -C server build -o ../bin/server ./cmd/server",
+    "server:test": "go -C server test ./..."
+  }
+}

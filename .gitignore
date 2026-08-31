@@ -1,0 +1,32 @@
+# Node
+node_modules/
+dist/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Go
+/bin/
+*.exe
+*.test
+
+# Air (Go hot reload, server/.air.toml)
+server/tmp/
+server/build-errors.log
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Data / local state
+*.sqlite
+*.sqlite3
+*.db
+
+# Env & editor
+.env
+.env.*
+!.env.example
+.DS_Store
