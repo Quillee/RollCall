@@ -1,0 +1,126 @@
+/* Tailwind v4 entry. Import this instead of "tailwindcss" directly.
+   Modes: set data-theme="beige" | "light" | "dark" on <html>. Utilities like bg-surface text-ink follow automatically. */
+/* fonts.css carries a Google Fonts @import, which CSS requires to precede all
+   other rules — so it must sort ahead of Tailwind's expansion. */
+@import "./tokens/fonts.css";
+@import "tailwindcss";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/shape.css";
+@import "./tokens/motion.css";
+
+@custom-variant beige (&:where([data-theme="beige"], [data-theme="beige"] *));
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+@custom-variant dark  (&:where([data-theme="dark"],  [data-theme="dark"] *));
+
+@theme inline {
+  /* semantic colors → bg-bg, bg-surface, text-ink, border-line, bg-accent, text-on-accent … */
+  --color-bg: var(--mc-bg);
+  --color-surface: var(--mc-surface);
+  --color-surface-2: var(--mc-surface-2);
+  --color-ink: var(--mc-ink);
+  --color-dim: var(--mc-dim);
+  --color-line: var(--mc-line);
+  --color-accent: var(--mc-accent);
+  --color-accent-soft: var(--mc-accent-soft);
+  --color-on-accent: var(--mc-on-accent);
+  --color-plum: var(--mc-plum);
+  --color-on-plum: var(--mc-on-plum);
+  --color-field: var(--mc-field);
+  --color-forest: var(--mc-forest);
+  --color-rock: var(--mc-rock);
+  --color-stone: var(--mc-stone);
+
+  /* brand scale (rarely used directly) */
+  --color-terracotta-100: var(--mc-terracotta-100);
+  --color-terracotta-200: var(--mc-terracotta-200);
+  --color-terracotta-400: var(--mc-terracotta-400);
+  --color-terracotta-500: var(--mc-terracotta-500);
+  --color-terracotta-600: var(--mc-terracotta-600);
+  --color-terracotta-900: var(--mc-terracotta-900);
+  --color-plum-300: var(--mc-plum-300);
+  --color-plum-500: var(--mc-plum-500);
+  --color-plum-700: var(--mc-plum-700);
+
+  --font-display: var(--mc-font-display);
+  --font-sans: var(--mc-font-sans);
+  --font-mono: var(--mc-font-mono);
+
+  --text-display-xl: var(--mc-text-display-xl);
+  --text-display-xl--line-height: var(--mc-leading-display-xl);
+  --text-display-xl--letter-spacing: var(--mc-tracking-display-xl);
+  --text-display-lg: var(--mc-text-display-lg);
+  --text-display-lg--line-height: var(--mc-leading-display-lg);
+  --text-display-lg--letter-spacing: var(--mc-tracking-display-lg);
+  --text-display-md: var(--mc-text-display-md);
+  --text-display-md--line-height: var(--mc-leading-display-md);
+  --text-display-md--letter-spacing: var(--mc-tracking-display-md);
+  --text-heading-lg: var(--mc-text-heading-lg);
+  --text-heading-lg--line-height: var(--mc-leading-heading-lg);
+  --text-heading-lg--letter-spacing: var(--mc-tracking-heading-lg);
+  --text-heading-md: var(--mc-text-heading-md);
+  --text-heading-md--line-height: var(--mc-leading-heading-md);
+  --text-heading-sm: var(--mc-text-heading-sm);
+  --text-heading-sm--line-height: var(--mc-leading-heading-sm);
+  --text-title: var(--mc-text-title);
+  --text-title--line-height: var(--mc-leading-title);
+  --text-lead: var(--mc-text-lead);
+  --text-lead--line-height: var(--mc-leading-lead);
+  --text-body: var(--mc-text-body);
+  --text-body--line-height: var(--mc-leading-body);
+  --text-small: var(--mc-text-small);
+  --text-small--line-height: var(--mc-leading-small);
+  --text-caption: var(--mc-text-caption);
+  --text-caption--line-height: var(--mc-leading-caption);
+  --text-micro: var(--mc-text-micro);
+  --text-label: var(--mc-text-label);
+  --text-label--letter-spacing: var(--mc-tracking-label);
+  --text-label-sm: var(--mc-text-label-sm);
+  --text-label-sm--letter-spacing: var(--mc-tracking-label-sm);
+  --text-eyebrow: var(--mc-text-eyebrow);
+  --text-eyebrow--letter-spacing: var(--mc-tracking-eyebrow);
+
+  --radius-sm: var(--mc-radius-sm);
+  --radius: var(--mc-radius);
+  --radius-md: var(--mc-radius-md);
+  --radius-pill: var(--mc-radius-pill);
+
+  /* v3 config has maxWidth.page; the upstream v4 entry omitted it. */
+  --container-page: var(--mc-page-max);
+
+  --spacing-gutter: var(--mc-gutter);
+  --spacing-hex-w: var(--mc-hex-w);
+  --spacing-hex-h: var(--mc-hex-h);
+  --spacing-hex-shift: var(--mc-hex-row-shift);
+  --spacing-hex-w-sm: var(--mc-hex-w-sm);
+  --spacing-hex-h-sm: var(--mc-hex-h-sm);
+  --spacing-hex-w-lg: var(--mc-hex-w-lg);
+  --spacing-hex-h-lg: var(--mc-hex-h-lg);
+
+  --shadow-frame: var(--mc-shadow-frame);
+  --shadow-tile-ring: var(--mc-tile-ring);
+
+  --ease-club: var(--mc-ease);
+  --animate-bob: mc-bob 4s ease-in-out infinite;
+  --animate-fade-up: mc-fade-up var(--mc-duration-slow) var(--mc-ease) both;
+}
+
+/* Hex utilities */
+@utility clip-hex      { clip-path: var(--mc-clip-hex); }
+@utility clip-hex-flat { clip-path: var(--mc-clip-hex-flat); }
+@utility clip-hex-wide { clip-path: var(--mc-clip-hex-wide); }
+@utility hex-row       { display: flex; margin-top: var(--mc-hex-row-overlap); }
+@utility hex-row-shift { margin-left: var(--mc-hex-row-shift); }
+@utility board-fade    { -webkit-mask-image: var(--mc-board-fade); mask-image: var(--mc-board-fade); }
+
+/* Type recipes (compose the primitives) */
+@utility label      { font-family: var(--mc-font-mono); font-size: var(--mc-text-label); letter-spacing: var(--mc-tracking-label); text-transform: uppercase; }
+@utility label-sm   { font-family: var(--mc-font-mono); font-size: var(--mc-text-label-sm); letter-spacing: var(--mc-tracking-label-sm); text-transform: uppercase; }
+@utility eyebrow    { font-family: var(--mc-font-mono); font-size: var(--mc-text-eyebrow); letter-spacing: var(--mc-tracking-eyebrow); text-transform: uppercase; }
+
+@layer base {
+  html { background: var(--mc-bg); color: var(--mc-ink); font-family: var(--mc-font-sans); -webkit-font-smoothing: antialiased; }
+  a { color: var(--mc-accent); text-decoration: none; }
+  a:hover { color: var(--mc-plum); }
+}

@@ -1,0 +1,17 @@
+:root {
+  --mc-radius-sm: 2px;
+  --mc-radius: 3px;
+  --mc-radius-md: 4px;
+  --mc-radius-pill: 999px;
+
+  --mc-border: 1px solid var(--mc-line);
+  --mc-border-dashed: 1px dashed var(--mc-line);
+  --mc-tile-ring: inset 0 0 0 1px var(--mc-line);
+
+  --mc-clip-hex: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  --mc-clip-hex-flat: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  --mc-clip-hex-wide: polygon(12% 0, 88% 0, 100% 50%, 88% 100%, 12% 100%, 0 50%);
+
+  --mc-shadow-frame: 0 30px 80px -40px rgba(0,0,0,.65);
+  --mc-board-fade: radial-gradient(ellipse 580px 410px at 444px 340px, #000 34%, rgba(0,0,0,.5) 66%, rgba(0,0,0,0) 97%);
+}

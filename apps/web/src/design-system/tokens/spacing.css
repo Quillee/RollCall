@@ -1,0 +1,18 @@
+:root {
+  /* 4px base; page gutters are 64px */
+  --mc-space-1: 4px;  --mc-space-2: 8px;  --mc-space-3: 12px; --mc-space-4: 16px;
+  --mc-space-5: 20px; --mc-space-6: 24px; --mc-space-7: 28px; --mc-space-8: 32px;
+  --mc-space-10: 40px; --mc-space-11: 44px; --mc-space-12: 48px; --mc-space-14: 56px; --mc-space-16: 64px;
+  --mc-gutter: 64px;
+  --mc-page-max: 1280px;
+
+  /* Hex geometry (pointy-top). Height = width × 1.1547; rows overlap by height/4; alternate rows shift width/2 */
+  --mc-hex-w: 148px;
+  --mc-hex-h: 171px;
+  --mc-hex-row-overlap: -43px;
+  --mc-hex-row-shift: 74px;
+  --mc-hex-w-sm: 118px;
+  --mc-hex-h-sm: 102px;
+  --mc-hex-w-lg: 186px;
+  --mc-hex-h-lg: 161px;
+}

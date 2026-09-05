@@ -1,0 +1,8 @@
+:root {
+  --mc-ease: cubic-bezier(.2, .7, .2, 1);
+  --mc-duration-fast: 120ms;
+  --mc-duration: 200ms;
+  --mc-duration-slow: 400ms;
+}
+@keyframes mc-bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-6px) rotate(2deg); } }
+@keyframes mc-fade-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }

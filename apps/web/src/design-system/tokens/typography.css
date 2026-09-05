@@ -1,0 +1,26 @@
+:root {
+  --mc-font-display: "DM Serif Display", Georgia, serif;
+  --mc-font-sans: "DM Sans", system-ui, sans-serif;
+  --mc-font-mono: "DM Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Display (serif) */
+  --mc-text-display-xl: 92px;  --mc-leading-display-xl: .94;  --mc-tracking-display-xl: -.03em;
+  --mc-text-display-lg: 76px;  --mc-leading-display-lg: .98;  --mc-tracking-display-lg: -.025em;
+  --mc-text-display-md: 60px;  --mc-leading-display-md: 1;    --mc-tracking-display-md: -.025em;
+  --mc-text-heading-lg: 32px;  --mc-leading-heading-lg: 1.1;  --mc-tracking-heading-lg: -.02em;
+  --mc-text-heading-md: 27px;  --mc-leading-heading-md: 1.15; --mc-tracking-heading-md: -.02em;
+  --mc-text-heading-sm: 21px;  --mc-leading-heading-sm: 1.15;
+  --mc-text-title: 19px;       --mc-leading-title: 1.15;
+
+  /* Body (sans) */
+  --mc-text-lead: 18px;  --mc-leading-lead: 1.6;
+  --mc-text-body: 15px;  --mc-leading-body: 1.6;
+  --mc-text-small: 14px; --mc-leading-small: 1.55;
+  --mc-text-caption: 13px; --mc-leading-caption: 1.5;
+  --mc-text-micro: 12px;
+
+  /* Label (mono, uppercase) */
+  --mc-text-label: 11px; --mc-tracking-label: .14em;
+  --mc-text-label-sm: 10px; --mc-tracking-label-sm: .12em;
+  --mc-text-eyebrow: 11px; --mc-tracking-eyebrow: .18em;
+}
