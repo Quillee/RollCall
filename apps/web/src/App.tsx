@@ -1,28 +1,19 @@
-import { createResource, Show } from "solid-js"
-import type { HealthResponse } from "@rollc/api-contract"
+import { A, type RouteSectionProps } from "@solidjs/router"
+import { Meeple } from "@rollc-ui/Meeple"
 
-async function fetchHealth(): Promise<HealthResponse> {
-  const res = await fetch("/api/health")
-  if (!res.ok) {
-    throw new Error(`health check failed: ${res.status}`)
-  }
-  return res.json()
-}
-
-export function App() {
-  const [health] = createResource(fetchHealth)
-
+export function App(props: RouteSectionProps) {
   return (
-    <main>
-      <h1>RollCall</h1>
-      <p>
-        Backend:{" "}
-        <Show when={!health.loading} fallback="checking...">
-          <Show when={!health.error} fallback="unreachable">
-            {health()?.status}
-          </Show>
-        </Show>
-      </p>
-    </main>
+    <div class="min-h-screen bg-bg text-ink">
+      <header class="border-b border-line">
+        <div class="mx-auto flex max-w-page items-center justify-between px-gutter py-6">
+          <A href="/" class="flex items-center gap-3 font-display text-heading-md text-ink">
+            <Meeple size={28} class="text-accent" />
+            RollCall
+          </A>
+          <span class="label text-dim">Board game nights</span>
+        </div>
+      </header>
+      <main class="mx-auto max-w-page px-gutter py-14">{props.children}</main>
+    </div>
   )
 }

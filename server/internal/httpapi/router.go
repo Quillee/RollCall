@@ -7,7 +7,7 @@ import "net/http"
 func NewRouter() http.Handler {
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("GET /api/health", handleHealth)
+	mux.HandleFunc("/api/health", handleHealth)
 
 	return mux
 }

@@ -3,8 +3,12 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client"],
-    "noEmit": true
+    "types": ["vite/client", "node"],
+    "noEmit": true,
+    "paths": {
+      "@rollc-ui/*": ["./src/components/*"],
+      "@rollc-util/*": ["./src/utils/*"]
+    }
   },
   "include": ["src", "vite.config.ts"]
 }
